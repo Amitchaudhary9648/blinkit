@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-
+#import <GoogleMaps/GoogleMaps.h>
 #import <React/RCTBundleURLProvider.h>
 
 @implementation AppDelegate
@@ -8,6 +8,7 @@
 {
   self.moduleName = @"blinkit";
   // You can add your custom initial props in the dictionary below.
+  [GMSServices provideAPIKey:@"AIzaSyC6QpKNKyW3qm2ZCC2un9E_DX-GTJ6or4Q"];
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
 

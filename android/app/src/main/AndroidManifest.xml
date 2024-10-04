@@ -15,6 +15,9 @@
       android:hardwareAccelerated="true"
       android:theme="@style/AppTheme"
       android:supportsRtl="true">
+      <meta-data 
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyC6QpKNKyW3qm2ZCC2un9E_DX-GTJ6or4Q"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
