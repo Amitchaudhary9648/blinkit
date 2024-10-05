@@ -53,8 +53,15 @@ const DeliveryDashboard: FC = ({navigation}: any) => {
   }
 
   useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      fetchData()
+    });
     fetchData()
-  },[selectedTab])
+    return () => {
+      // Unsubscribe for the focus Listener
+      unsubscribe;
+    };
+  },[selectedTab, navigation])
   return (
     <View style={styles.container}>
       <SafeAreaView>
