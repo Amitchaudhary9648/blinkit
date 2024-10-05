@@ -29,11 +29,11 @@ export const withLiveStatus = <P extends object>(WrappedComponent: React.Compone
                     withCredentials: false
                 })
                 socketInstance.emit('joinRoom', currentOrder?._id)
-                socketInstance.emit('liveTrackingUpdates',(updatedOrder : any) => {
+                socketInstance.on('liveTrackingUpdates',(updatedOrder : any) => {
                     fetchOrderDetails()
                     console.log("RECEIVING LIVE UPDATES🔴", updatedOrder);
                 })
-                socketInstance.emit('orderConfirmed',(confirmOrder: any) => {
+                socketInstance.on('orderConfirmed',(confirmOrder: any) => {
                     fetchOrderDetails()
                     console.log("ORDER CONFIRMATION LIVE UPDATES🔴", confirmOrder);
                 })
